@@ -1,7 +1,10 @@
+<style>
 body {
-font-family: DIN; background-color: #f0f0f0;
+  font-family: font-family: 'DIN', sans-serif;
+  background-color: #f0f0f0;
   color: #333;
   margin: 0;
   padding: 20px;
 }
 h1 {color: #2c3e50;}
+</style>
