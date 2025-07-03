@@ -12,13 +12,6 @@ h4 {color: #2c3e50;}
 h5 {color: #2c3e50;}
 h6 {color: #2c3e50;}
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -48,18 +41,9 @@ body {
   width: 16px;
   height: 16px;
 }
-
-.content {
-  max-width: 1200px;
-  margin: 32px auto;
-  padding: 0 16px;
-}
-
-iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-}
+.linkedin-container {
+    align-self: flex-end;
+  }
 
 @media (max-width: 768px) {
   .header {
@@ -68,7 +52,21 @@ iframe {
     gap: 12px;
   }
 
-  .linkedin-container {
-    align-self: flex-end;
-  }
+.responsive-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 800 / 486; /* 保持比例 */
+  margin: 0 auto; /* 居中 */
+  overflow: hidden;
+}
+
+.responsive-iframe-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  left: 0;
+  top: 0;
+}
 }
