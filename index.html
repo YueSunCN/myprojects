@@ -1,89 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yvonne's Project Timeline</title>
-  
-  <!-- 引入 Inter 免费字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yvonne's profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 28px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .iframe-wrapper {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* 16:9 比例 */
-      margin-bottom: 30px;
-    }
-
-    .iframe-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .links {
-      text-align: center;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 10px 20px;
-      background-color: #0066cc;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-
-    .links a:hover {
-      background-color: #004f9a;
-    }
+    body {margin: 0;font-family: 'Inter', sans-serif;background-color: #f9f9f9;color: #333;}
+    .header {display: flex;justify-content: space-between;align-items: center;padding: 16px 32px;background-color: #ffffff;box-shadow: 0 2px 4px rgba(0,0,0,0.05);position: relative;}
+    .content {max-width: 1200px;margin: 32px auto;padding: 0 16px;}
+    .linkedin-button {display: flex;align-items: center;text-decoration: none;color: #0077b5;font-weight: bold;gap: 8px;}
+    .linkedin-button img {width: 20px;height: 20px;}
+    iframe {width: 100%;aspect-ratio: 16 / 9;border: none;}
+    @media (max-width: 768px) {.header {flex-direction: column;align-items: flex-start;gap: 12px;}}
   </style>
 </head>
+
 <body>
-
-  <div class="container">
-    <h1>My project timeline:<br>Click the gantt chart item to see project details.<br>For the best experience, please use a widescreen display. </h1>
-	
-    <div class="iframe-wrapper">
-      <iframe 
-        title="Projects"
-        src="https://app.powerbi.com/view?r=eyJrIjoiNWFkODViYTItNjkxYi00Njc1LTg4OWEtMDcwYTZlNjliNTczIiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <div class="links">
-      <a href="https://your-website.com" target="_blank">我的网站</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-    </div>
+  <div class="header">
+    <h1>Welcome to Yvonne's Profile</h1>
+    <a
+      href="https://www.linkedin.com/in/yuesun-cn"  <!-- Linkedin -->
+      target="_blank"
+      class="linkedin-button"
+    >
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+      Personal webpage
+    </a>
   </div>
 
+  <div class="content">
+	<h6 align="left">My project timeline:<br>Click the gantt chart item to see project details.<br>For the best experience, please use a widescreen display.</h6>
+	<iframe title="Projects" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiNWFkODViYTItNjkxYi00Njc1LTg4OWEtMDcwYTZlNjliNTczIiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
+  </div>
 </body>
 </html>
