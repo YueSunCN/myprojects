@@ -17,6 +17,12 @@ h6 {color: #2c3e50;}
   padding: 16px 16px; background-color: #ffffff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: relative;}
 
+ @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px; }}
+
 .linkedin-container {
   display: flex;justify-content: flex-end; flex: 1;}
 
@@ -27,7 +33,7 @@ h6 {color: #2c3e50;}
   width: 16px; height: 16px;}
 .linkedin-container {
     align-self: flex-end;}
-  
+
 .iframe-wrapper {
   display: flex;
   justify-content: center;
