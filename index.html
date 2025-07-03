@@ -1,23 +1,89 @@
-<! DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1. 0">
-<link rel="stylesheet "href="style.css">
-<title>Yvonne's Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yvonne's Project Timeline</title>
+  
+  <!-- 引入 Inter 免费字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 比例 */
+      margin-bottom: 30px;
+    }
+
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .links {
+      text-align: center;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: #004f9a;
+    }
+  </style>
 </head>
 <body>
-  <h2 align="left">Welcome to Yvonne's Profile</h2>
-  <h6 align="left">My project timeline:<br>Click the gantt chart item to see project details.<br>For the best experience, please use a widescreen display.</h6>
- <!--iframe title="Projects" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiNWFkODViYTItNjkxYi00Njc1LTg4OWEtMDcwYTZlNjliNTczIiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe-->
-<div style="position: relative; width: 100%; padding-top: 56.25%;">
-  <iframe 
-    title="Projects" 
-    src="https://app.powerbi.com/view?r=eyJrIjoiNWFkODViYTItNjkxYi00Njc1LTg4OWEtMDcwYTZlNjliNTczIiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9" 
-    frameborder="0" 
-    allowfullscreen 
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-  </iframe>
-</div>
+
+  <div class="container">
+    <h1>My project timeline:<br>Click the gantt chart item to see project details.<br>For the best experience, please use a widescreen display. </h1>
+	
+    <div class="iframe-wrapper">
+      <iframe 
+        title="Projects"
+        src="https://app.powerbi.com/view?r=eyJrIjoiNWFkODViYTItNjkxYi00Njc1LTg4OWEtMDcwYTZlNjliNTczIiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="links">
+      <a href="https://your-website.com" target="_blank">我的网站</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
 </body>
 </html>
