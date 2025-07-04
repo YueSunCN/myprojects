@@ -8,6 +8,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: #2c3e50;
+  margin: 0; /* ✅ 清除默认外边距 */
 }
 
 .header {
@@ -21,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 
-/* 主容器：宽屏下横向排列，顶端对齐 */
+/* 容器：宽屏横向排布，顶部对齐 */
 .title-header-row {
   display: flex;
   justify-content: space-between;
@@ -31,32 +32,40 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 
-/* 按钮列：纵向排列、左对齐，与标题顶端对齐 */
+/* 确保 h2 与按钮齐平 */
+.title-header-row h2 {
+  margin: 0;
+  line-height: 1.2; /* ✅ 控制标题行高以便对齐 */
+}
+
+/* 按钮列（宽屏）：纵向、左对齐 */
 .button-column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  padding-top: 4px; /* 微调对齐 */
+  padding-top: 4px; /* ✅ 微调顶部对齐 */
 }
 
-/* 按钮样式 */
-.linkedin-button,
+/* LinkedIn 按钮 */
+.linkedin-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #0077b5;
+  font-weight: bold;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+/* 邮箱链接 */
 .email-link {
   display: flex;
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
-.linkedin-button {
-  color: #0077b5;
-}
-
-.email-link {
   color: #333;
+  font-size: 0.95rem;
 }
 
 .linkedin-button img,
@@ -65,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 16px;
 }
 
-/* 上下文提示文字 */
+/* 提示文字 */
 .context {
   padding: 12px 0;
   font-size: 0.95rem;
@@ -74,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
 }
 
-/* iframe 容器和适配 */
+/* 图表容器 */
 .iframe-container {
   position: relative;
   width: 100%;
@@ -92,8 +101,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 0;
 }
 
-/* 📱 手机屏幕：按钮改为横向排列，靠左 */
-@media (max-width: 425px) {
+/* 📱 手机屏幕下：按钮横向排列在标题下方 */
+@media (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
@@ -115,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     align-items: center;
     gap: 16px;
-    padding-top: 0; /* 手机端无需上边距 */
+    padding-top: 0;
   }
 
   .linkedin-button,
