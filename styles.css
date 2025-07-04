@@ -30,9 +30,28 @@ h1, h2, h3, h4, h5, h6 {
   gap: 6px;
 }
 
-.linkedin-button img {
+.linkedin-button img,
+.email-link img {
   width: 16px;
   height: 16px;
+}
+
+/* 新增邮箱链接样式 */
+.email-link {
+  display: flex;                  /* ✅ 与 LinkedIn 样式一致 */
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* 容器默认纵向排列（宽屏） */
+.linkedin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
 }
 
 .context {
@@ -77,6 +96,17 @@ h1, h2, h3, h4, h5, h6 {
 
   .linkedin-button {
     font-size: 0.9rem; /* 修改 */
+  }
+  
+  .linkedin-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .email-link {
+    font-size: 0.85rem;
   }
 
   .context {
