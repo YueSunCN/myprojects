@@ -18,49 +18,47 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: relative;
-  flex-wrap: wrap; /* 修改：让内容在小屏时换行 */
+  flex-wrap: wrap;
 }
 
-/* 新增布局容器 */
 .title-header-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-direction: column; /* 默认：手机端为垂直 */
+  flex-direction: row; /* 宽屏：横向排列 */
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button-column {
+  display: flex;
+  flex-direction: column; /* 宽屏：纵向排列 */
+  align-items: flex-end;
   gap: 8px;
 }
 
-.linkedin-button {
+.linkedin-button,
+.email-link {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: #0077b5;
-  font-weight: bold;
   gap: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.linkedin-button {
+  color: #0077b5;
+}
+
+.email-link {
+  color: #333;
+  font-size: 0.9rem;
 }
 
 .linkedin-button img,
 .email-link img {
   width: 16px;
   height: 16px;
-}
-
-/* 新增邮箱链接样式 */
-.email-link {
-  display: flex;                  /* ✅ 与 LinkedIn 样式一致 */
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #333;
-  font-size: 0.9rem;
-}
-
-/* 容器默认纵向排列（宽屏） */
-.linkedin-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
 }
 
 .context {
@@ -75,7 +73,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   max-width: 800px;
-  /*margin: 0 auto; 修改：居中容器 */
   aspect-ratio: 800 / 486;
   background-color: #f0f0f0;
 }
@@ -89,54 +86,43 @@ h1, h2, h3, h4, h5, h6 {
   border: 0;
 }
 
-/* 添加响应式设计 */
+/* 📱 手机屏幕：按钮横向排列在文字下方 */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; /* 修改 */
+    flex-direction: column;
     align-items: flex-start;
     gap: 12px;
     text-align: left;
   }
 
   .header h2 {
-    font-size: 1.25rem; /* 修改：小屏下字体缩小 */
+    font-size: 1.25rem;
     line-height: 1.3;
   }
 
   .title-header-row {
-    flex-direction: row; /* 宽屏：左右布局 */
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .button-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
-  }
-  
-  .linkedin-button {
-    font-size: 0.9rem; /* 修改 */
-  }
-  
-  .linkedin-container {
     flex-direction: row;
     align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 16px;
   }
 
+  .linkedin-button,
   .email-link {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .context {
-    font-size: 0.85rem; /* 修改 */
+    font-size: 0.85rem;
   }
 
   .iframe-container {
     width: 100%;
-    max-width: 100%; /* 修改：iframe 宽度适应屏幕 */
-    aspect-ratio: 16 / 9; /* 修改：更适合小屏的比例 */
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
   }
 }
