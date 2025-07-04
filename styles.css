@@ -21,22 +21,26 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 
+/* 主容器：宽屏下横向排列，顶端对齐 */
 .title-header-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-direction: row; /* 宽屏：横向排列 */
+  flex-direction: row;
   gap: 12px;
   flex-wrap: wrap;
 }
 
+/* 按钮列：纵向排列、左对齐，与标题顶端对齐 */
 .button-column {
   display: flex;
-  flex-direction: column; /* 宽屏：纵向排列 */
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 8px;
+  padding-top: 4px; /* 微调对齐 */
 }
 
+/* 按钮样式 */
 .linkedin-button,
 .email-link {
   display: flex;
@@ -44,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 6px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.95rem;
 }
 
 .linkedin-button {
@@ -52,7 +57,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .email-link {
   color: #333;
-  font-size: 0.9rem;
 }
 
 .linkedin-button img,
@@ -61,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 16px;
 }
 
+/* 上下文提示文字 */
 .context {
   padding: 12px 0;
   font-size: 0.95rem;
@@ -69,6 +74,7 @@ h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
 }
 
+/* iframe 容器和适配 */
 .iframe-container {
   position: relative;
   width: 100%;
@@ -86,8 +92,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 0;
 }
 
-/* 📱 手机屏幕：按钮横向排列在文字下方 */
-@media (max-width: 425px) {
+/* 📱 手机屏幕：按钮改为横向排列，靠左 */
+@media (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
@@ -109,6 +115,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     align-items: center;
     gap: 16px;
+    padding-top: 0; /* 手机端无需上边距 */
   }
 
   .linkedin-button,
