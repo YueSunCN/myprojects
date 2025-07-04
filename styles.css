@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 📱 手机屏幕：按钮改为横向排列，靠左 */
-@media (max-width: 768px) {
+@media (max-width: 425px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
