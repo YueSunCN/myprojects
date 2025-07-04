@@ -21,6 +21,15 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap; /* 修改：让内容在小屏时换行 */
 }
 
+/* 新增布局容器 */
+.title-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column; /* 默认：手机端为垂直 */
+  gap: 8px;
+}
+
 .linkedin-button {
   display: flex;
   align-items: center;
@@ -94,6 +103,18 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
   }
 
+  .title-header-row {
+    flex-direction: row; /* 宽屏：左右布局 */
+    align-items: center;
+  }
+
+  .button-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  
   .linkedin-button {
     font-size: 0.9rem; /* 修改 */
   }
