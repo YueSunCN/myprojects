@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 .linkedin-button {
   display: flex;
   align-items: center;
+  gap: 6px;
   text-decoration: none;
   color: #0077b5;
   font-weight: bold;
@@ -73,7 +74,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  color: #333;
+  color: #00b599;
+  font-weight: bold;
+  gap: 6px;
   font-size: 0.95rem;
 }
 
