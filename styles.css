@@ -5,30 +5,33 @@
   font-style: normal;
   font-display: swap;
 }
+
 body, p, div, span, h1, h2, h3, h4, h5, h6, a, li, input, textarea, button {
   font-family: 'RobotoFlex', sans-serif !important;
   background-color: #f0f0f0;
   color: #333;
   margin: 0;
-  padding: 20px;
+  padding: 0; /* ✅ 移除全局 padding，避免按钮和文字错位 */
 }
+
 h1, h2, h3, h4, h5, h6 {
   color: #2c3e50;
   margin: 0;
+  padding: 0;
+  line-height: 1.2; /* ✅ 避免字体拉高行距 */
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 16px 20px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: relative;
   flex-wrap: wrap;
 }
 
-/* 容器：宽屏横向排布，顶部对齐 */
 .title-header-row {
   display: flex;
   justify-content: space-between;
@@ -36,21 +39,26 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: row;
   gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-/* 确保 h2 与按钮齐平 */
+/* 标题精确对齐按钮顶部 */
 .title-header-row h2 {
   margin: 0;
-  line-height: 1.2; /* ✅ 控制标题行高以便对齐 */
+  padding: 0;
+  line-height: 1.1;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: flex-start;
 }
 
-/* 按钮列（宽屏）：纵向、左对齐 */
+/* 宽屏按钮列：靠右纵排 */
 .button-column {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 8px;
-  padding-top: 4px; /* ✅ 微调顶部对齐 */
+  padding-top: 2px; /* 微调垂直对齐 */
 }
 
 /* LinkedIn 按钮 */
@@ -59,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   text-decoration: none;
   color: #0077b5;
-  font-weight: bold;
+  font-weight: 600;
   gap: 6px;
   font-size: 0.95rem;
 }
@@ -80,9 +88,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 16px;
 }
 
-/* 提示文字 */
+/* 提示语 */
 .context {
-  padding: 12px 0;
+  padding: 12px 20px;
   font-size: 0.95rem;
   line-height: 1.4;
   max-width: 100%;
@@ -96,6 +104,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 800px;
   aspect-ratio: 800 / 486;
   background-color: #f0f0f0;
+  margin: 0 auto;
 }
 
 .iframe-container iframe {
@@ -109,18 +118,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 📱 手机屏幕下：按钮横向排列在标题下方 */
 @media (max-width: 425px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    text-align: left;
-  }
-
-  .header h2 {
-    font-size: 1.25rem;
-    line-height: 1.3;
-  }
-
   .title-header-row {
     flex-direction: column;
     align-items: flex-start;
@@ -129,8 +126,14 @@ h1, h2, h3, h4, h5, h6 {
   .button-column {
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     gap: 16px;
-    padding-top: 0;
+    padding-top: 12px;
+  }
+
+  .title-header-row h2 {
+    font-size: 1.25rem;
+    line-height: 1.3;
   }
 
   .linkedin-button,
@@ -140,6 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .context {
     font-size: 0.85rem;
+    padding: 12px 20px;
   }
 
   .iframe-container {
