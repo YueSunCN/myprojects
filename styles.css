@@ -127,10 +127,6 @@ h1, h2, h3, h4, h5, h6, p{
     font-size: 1.25rem;
     line-height: 1.3;
   }
-
-  p {
-    font-size: 0.85rem; /* 或者 14px、13px，根据你想要的大小 */
-  }
   
   .title-header-row {
     flex-direction: column;
