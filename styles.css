@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: row;
   gap: 12px;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
 /* ✅ 标题顶端对齐 */
