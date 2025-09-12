@@ -1,19 +1,17 @@
-/* Modernized styles.css */
+/* Updated styles.css with specific color requests and PowerBI modernization */
 
-/* Base Styles */
+/* CSS Variables for requested colors */
 :root {
-  --primary-color: #3f51b5; /* A vibrant blue for main accents */
-  --secondary-color: #f44336; /* A contrasting color, e.g., for hover or alerts */
-  --text-color-dark: #212121;
-  --text-color-medium: #424242;
-  --text-color-light: #757575;
-  --background-color: #f5f5f5; /* Lighter, clean background */
-  --surface-color: #ffffff; /* Card/element background */
+  --page-background-color: #ffffff; /* Requested background color */
+  --main-accent-color: #339999; /* Requested main accent color */
+  --linkedin-color: #0077b5; /* Requested LinkedIn color */
+  --text-color-dark: #2c3e50; /* Original dark text color */
+  --text-color-medium: #333; /* Original medium text color */
+  --surface-color: #ffffff; /* Explicitly white for elements on main background */
   --border-color: #e0e0e0;
-  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.08);
-  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.12);
-  --border-radius-sm: 8px;
-  --border-radius-md: 12px;
+  --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.08); /* Lighter, more subtle shadow */
+  --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.12); /* Slightly more prominent shadow */
+  --border-radius-md: 10px; /* Consistent rounded corners */
 }
 
 body {
@@ -23,123 +21,122 @@ body {
   font-style: normal;
   font-variation-settings:
     "slnt" 0, "wdth" 100, "GRAD" 0, "XOPQ" 96, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
-  background-color: var(--background-color);
+  background-color: var(--page-background-color); /* Use requested background color */
   color: var(--text-color-medium);
   margin: 0;
-  padding: 1.5rem; /* Increased padding for more breathing room */
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 20px; /* Keep original padding */
+  line-height: 1.5; /* Slightly increased for readability */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p{
   font-family: 'Roboto Flex', sans-serif !important;
-  color: var(--text-color-dark);
-  margin: 0;
-  font-weight: 700; /* Bolder headings */
-}
-
-p {
-  color: var(--text-color-medium);
+  color: var(--text-color-dark); /* Keep original heading color */
   margin: 0;
 }
 
-/* Header & Title Section */
+/* Original Header (kept as is, but adjusted h2 color) */
 .title-header-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
-  gap: 1.5rem; /* Increased gap */
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color); /* Subtle separator */
+  margin-bottom: 20px; /* Added some space below header */
 }
 
 .title-header-row h2 {
-  font-size: 2.2rem; /* Larger, more impactful title */
+  margin: 0;
   line-height: 1.2;
-  font-weight: 800; /* Even bolder */
-  color: var(--primary-color); /* Title in primary color */
+  color: var(--text-color-dark); /* Keep original heading color */
+  font-weight: 700; /* Make title slightly bolder */
 }
 
+/* Button Column (adjusted alignment and gap) */
 .button-column {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Align buttons to the right on wide screens */
-  gap: 0.75rem; /* Spacing between buttons */
-  padding-top: 0.25rem;
+  align-items: flex-end; /* Align right on wide screens */
+  gap: 8px;
+  padding-top: 4px;
 }
 
-/* Button Styles - Modern Look */
-.linkedin-button,
-.email-link {
-  display: inline-flex; /* Use inline-flex for better alignment */
+/* LinkedIn Button - Styling modernized with requested color */
+.linkedin-button {
+  display: inline-flex;
   align-items: center;
-  padding: 0.6rem 1rem; /* Comfortable padding */
-  border-radius: var(--border-radius-sm); /* Slightly rounded corners */
   text-decoration: none;
-  font-weight: 600; /* Medium bold */
-  font-size: 0.9rem;
-  transition: all 0.2s ease-in-out; /* Smooth transitions for hover */
-  box-shadow: var(--shadow-light);
+  color: var(--linkedin-color); /* Use requested LinkedIn color */
+  font-weight: 600; /* Slightly bolder */
+  gap: 6px;
+  font-size: 0.95rem;
+  padding: 8px 12px; /* Added padding for better click area */
+  border-radius: var(--border-radius-md); /* Rounded corners */
   background-color: var(--surface-color);
+  box-shadow: var(--shadow-light); /* Subtle shadow */
+  transition: all 0.2s ease-in-out; /* Smooth transitions */
   border: 1px solid var(--border-color); /* Subtle border */
 }
 
-.linkedin-button {
-  color: #0a66c2; /* LinkedIn's brand blue */
-}
-
-.email-link {
-  color: #d32f2f; /* A more impactful red for email, or a shade of primary */
-}
-
 .linkedin-button:hover {
-  background-color: #e3f2fd; /* Light blue on hover */
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-medium); /* More prominent shadow on hover */
   transform: translateY(-2px); /* Slight lift effect */
-  border-color: #bbdefb;
+  background-color: #e6f7ff; /* Very light blue hover */
+  border-color: #a6d9f7;
+}
+
+/* Email Link - Styling modernized with requested main accent color */
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--main-accent-color); /* Use requested main accent color */
+  font-weight: 600; /* Slightly bolder */
+  font-size: 0.95rem;
+  padding: 8px 12px; /* Added padding */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-light); /* Subtle shadow */
+  transition: all 0.2s ease-in-out; /* Smooth transitions */
+  border: 1px solid var(--border-color); /* Subtle border */
 }
 
 .email-link:hover {
-  background-color: #ffebee; /* Light red on hover */
   box-shadow: var(--shadow-medium);
   transform: translateY(-2px);
-  border-color: #ffcdd2;
+  background-color: #e6fcfc; /* Very light teal hover */
+  border-color: #a3e6e6;
 }
-
 
 .linkedin-button img,
 .email-link img {
   width: 18px; /* Slightly larger icons */
   height: 18px;
-  margin-right: 0.5rem; /* Space between icon and text */
+  /* Original images from URL are fine */
 }
 
-/* Context/Description Text */
+/* Context (kept mostly as is) */
 .context {
-  padding: 1rem 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--text-color-dark);
+  padding: 12px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
   max-width: 100%;
   word-wrap: break-word;
-  margin-bottom: 2rem; /* More space before the iframe */
+  margin-bottom: 25px; /* Added more space below context */
 }
 
-/* Iframe Container - Modern Look */
+/* PowerBI Report Iframe Container - Modernization Applied Here */
 .iframe-container {
   position: relative;
   width: 100%;
-  max-width: 960px; /* Increased max-width for the chart */
-  aspect-ratio: 16 / 9; /* Common aspect ratio for embedded content */
-  background-color: var(--surface-color);
-  border-radius: var(--border-radius-md); /* Rounded corners for the chart area */
-  overflow: hidden; /* Ensures iframe respects border-radius */
-  box-shadow: var(--shadow-medium); /* Prominent shadow */
-  margin: 0 auto 2rem auto; /* Center the iframe and add bottom margin */
+  max-width: 900px; /* Increased max-width for the chart */
+  aspect-ratio: 16 / 9; /* Modern aspect ratio for embedded content */
+  background-color: var(--surface-color); /* White background for the iframe 'card' */
+  border-radius: var(--border-radius-md); /* Rounded corners */
+  overflow: hidden; /* Ensures iframe corners are rounded */
+  box-shadow: var(--shadow-medium); /* Prominent shadow for a floating card effect */
+  margin: 0 auto; /* Center the iframe horizontally */
   border: 1px solid var(--border-color); /* Subtle border */
 }
 
@@ -149,57 +146,57 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: 0; /* Remove iframe's default border */
 }
 
-/* Floating Chatbot Button - Modernized */
+/* Floating Chatbot Button - Modernized with main accent color */
 #chatButton {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background-color: var(--primary-color); /* Use primary color */
-  color: var(--surface-color);
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--main-accent-color); /* Use main accent color */
+  color: var(--surface-color); /* White icon */
   border: none;
   border-radius: 50%;
-  width: 65px; /* Slightly larger */
-  height: 65px;
-  font-size: 1.8rem; /* Larger icon */
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
   cursor: pointer;
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-medium); /* More prominent shadow */
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Smooth hover transition */
 }
 
 #chatButton:hover {
-  background-color: #303f9f; /* Darker shade on hover */
+  background-color: #2a7a7a; /* Darker shade on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px);
+  transform: translateY(-2px); /* Slight lift */
 }
 
 /* Chat Window Modal - Modernized */
 #chatWindow {
   display: none;
   position: fixed;
-  bottom: 5.5rem; /* Adjusted for button size */
-  right: 1.5rem;
-  width: 380px; /* Slightly wider */
-  height: 520px; /* Slightly taller */
+  bottom: 80px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-md);
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.25); /* Stronger shadow */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Stronger shadow */
   z-index: 1000;
   background: var(--surface-color);
-  animation: fadeInScale 0.3s ease-out forwards; /* Add open animation */
+  animation: fadeInScale 0.3s ease-out forwards; /* Open animation */
 }
 
 @keyframes fadeInScale {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -207,89 +204,87 @@ p {
   }
 }
 
-
 #chatWindow iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* Close Button - Modernized */
+/* Close button - Modernized */
 #closeChat {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: rgba(0,0,0,0.5); /* Slightly softer background */
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.4); /* Slightly softer close button background */
   color: var(--surface-color);
   border: none;
-  font-size: 1.2rem;
+  font-size: 20px; /* Slightly larger */
   font-weight: bold;
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  line-height: 30px;
+  line-height: 28px;
   text-align: center;
   cursor: pointer;
   z-index: 1100;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 #closeChat:hover {
-  background-color: var(--secondary-color); /* Red on hover */
-  transform: rotate(90deg); /* Little spin effect */
+  background-color: var(--main-accent-color); /* Hover with accent color */
+  transform: rotate(90deg); /* Little spin */
 }
 
-
-/* 📱 Mobile Responsiveness */
-@media (max-width: 768px) {
-  body {
-    padding: 1rem; /* Reduce padding on small screens */
-  }
-
-  .title-header-row h2 {
-    font-size: 1.8rem;
-  }
-
+/* 📱 Mobile Responsiveness (largely kept as per your original, but applied new button styles) */
+@media (max-width: 425px) {
   .title-header-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-    padding-bottom: 1rem;
   }
 
+  .title-header-row h2 {
+    font-size: 1.5rem; /* Slightly adjust title size for smaller screens */
+    line-height: 1.3;
+  }
+  
   .button-column {
     flex-direction: row; /* Buttons side-by-side */
     align-items: center;
-    gap: 1rem;
-    width: 100%; /* Take full width */
-    justify-content: flex-start; /* Align left */
+    gap: 16px;
+    padding-top: 0;
   }
 
   .linkedin-button,
   .email-link {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    padding: 6px 10px; /* Adjust padding for smaller buttons */
   }
 
   .linkedin-button img,
   .email-link img {
     width: 16px;
     height: 16px;
-    margin-right: 0.4rem;
   }
 
   .context {
-    font-size: 0.9rem;
-    padding: 0.8rem 0;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
   }
 
   .iframe-container {
-    max-width: 100%;
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-light);
+    max-width: 100%; /* Ensure it takes full width on mobile */
+    aspect-ratio: 4 / 3; /* A more vertical aspect ratio for mobile charts */
+    box-shadow: var(--shadow-light); /* Lighter shadow on mobile */
   }
 
+  #chatButton {
+    width: 50px; /* Slightly smaller button on mobile */
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+/* Responsive: Fullscreen on mobile for chat window (kept as is, but applied variables) */
+@media (max-width: 768px) {
   #chatWindow {
     width: 100%;
     height: 100%;
@@ -298,42 +293,15 @@ p {
     top: 0;
     left: 0;
     border-radius: 0;
-    box-shadow: none; /* No shadow in fullscreen */
+    box-shadow: none; /* No shadow in fullscreen mode */
   }
 
   #closeChat {
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
-  }
-
-  #chatButton {
-    width: 55px;
-    height: 55px;
-    font-size: 1.6rem;
-    bottom: 1rem;
-    right: 1rem;
-  }
-}
-
-/* Even smaller screens (e.g., iPhone SE) */
-@media (max-width: 375px) {
-  .title-header-row h2 {
-    font-size: 1.5rem;
-  }
-
-  .button-column {
-    flex-direction: column; /* Stack buttons again if space is very tight */
-    align-items: flex-start;
-    gap: 0.7rem;
-  }
-
-  .linkedin-button,
-  .email-link {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.7rem;
+    top: 12px;
+    right: 12px;
+    font-size: 22px;
+    width: 34px;
+    height: 34px;
+    line-height: 32px;
   }
 }
