@@ -2,6 +2,19 @@
   src: url('/font/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf') format('truetype');
   font-weight: 100 900; font-style: normal; font-display: swap;}*/
 
+:root {
+  --page-background-color: #f5f5f5; /* Requested background color */
+  --main-accent-color: #339999; /* Requested main accent color */
+  --linkedin-color: #0077b5; /* Requested LinkedIn color */
+  --text-color-dark: #001724; /* Original dark text color */
+  --text-color-medium: #1e5b5b; /* Original medium text color */
+  --surface-color: #ffffff; /* Explicitly white for elements on main background */
+  --border-color: #e0e0e0;
+  --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.08); /* Lighter, more subtle shadow */
+  --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.12); /* Slightly more prominent shadow */
+  --border-radius-md: 10px; /* Consistent rounded corners */
+}
+
 body {
   font-family: "Roboto Flex", sans-serif !important; 
   font-optical-sizing: auto;
@@ -9,7 +22,7 @@ body {
   font-style: normal;
   font-variation-settings:
     "slnt" 0, "wdth" 100, "GRAD" 0, "XOPQ" 96, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
-  background-color: #f0f0f0;
+  background-color: var(--page-background-color);
   color: #333;
   margin: 0;
   padding: 20px;
@@ -17,16 +30,17 @@ body {
 
 h1, h2, h3, h4, h5, h6, p{
   font-family: 'Roboto Flex', sans-serif !important;
-  color: #2c3e50;
-  margin: 0; /* ✅ 清除默认外边距 */
+  color: var(--text-color-dark); /* Keep original heading color */
+  margin: 0;
 }
+
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background-color: #ffffff;
+  background-color: var(--page-background-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: relative;
   flex-wrap: wrap;
@@ -46,7 +60,11 @@ h1, h2, h3, h4, h5, h6, p{
 .title-header-row h2 {
   margin: 0;
   line-height: 1.2; /* ✅ 控制标题行高以便对齐 */
+  color: var(--text-color-dark);
+  font-weight: 700; /* Make title slightly bolder */
 }
+
+
 
 /* 按钮列（宽屏）：纵向、左对齐 */
 .button-column {
@@ -62,7 +80,7 @@ h1, h2, h3, h4, h5, h6, p{
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #0077b5;
+  color: var(--linkedin-color);
   font-weight: bold;
   gap: 6px;
   font-size: 0.95rem;
@@ -74,7 +92,7 @@ h1, h2, h3, h4, h5, h6, p{
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  color: #339999;
+  color: var(--main-accent-color);
   font-weight: bold;
   font-size: 0.95rem;
 }
@@ -100,7 +118,7 @@ h1, h2, h3, h4, h5, h6, p{
   width: 100%;
   max-width: 800px;
   aspect-ratio: 800 / 486;
-  background-color: #f0f0f0;
+  background-color: var(--surface-color);
 }
 
 .iframe-container iframe {
@@ -115,7 +133,7 @@ h1, h2, h3, h4, h5, h6, p{
 /* Floating chat button */
 #chatButton {
   position: fixed; bottom: 20px; right: 20px;
-  background-color: #4CAF50;
+  background-color: var(--main-accent-color);
   color: white;
   border: none; border-radius: 50%; width: 60px; height: 60px;
   font-size: 24px;
