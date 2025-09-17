@@ -165,19 +165,20 @@ h1, h2, h3, h4, h5, h6, p{
 
 /* Close button */
 #closeChat {
-  position: absolute;
+  position: absolute;  /* ✅ 保证固定在右上角 */
   top: 8px;
   right: 10px;
   background: rgba(0,0,0,0.6);
-  color: white;
   border: none;
   border-radius: 50%;
   width: 28px;
   height: 28px;
-  line-height: 28px; /* 🔧 修改：line-height 改为和 height 一致，保持正圆 */
-  text-align: center;
+  display: flex;               /* ✅ 用 flex 居中 */
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  z-index: 1100;
+  padding: 0;
+  line-height: normal;
 }
 
 .chat-icon {
@@ -258,5 +259,10 @@ h1, h2, h3, h4, h5, h6, p{
     width: 34px;
     height: 34px;
     line-height: 34px; /* 🔧 修改：同步调整 line-height，确保手机端也是正圆 */
+  }
+  
+  .close-icon {
+    width: 20px;
+    height: 20px;
   }
 }
