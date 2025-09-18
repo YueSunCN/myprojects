@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6, p{
 .iframe-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 1028px;
   aspect-ratio: 800 / 486;
   background-color: var(--surface-color);
 }
