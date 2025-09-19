@@ -16,11 +16,11 @@
     <h2>Welcome to<br>Yvonne's Project Chart</h2>
     <div class="button-column">
       <a href="https://www.linkedin.com/in/yuesun-cn" target="_blank" class="linkedin-button">
-        <img src="https://yuesuncn.github.io/myprojects/pics/linkedin.svg" alt="LinkedIn Icon">
+        <img src="./pics/linkedin.svg" alt="LinkedIn Icon">
         My Linkedin
       </a>
       <a href="mailto:sunyue_cn@foxmail.com" class="email-link">
-        <img src="https://yuesuncn.github.io/myprojects/pics/email.svg" alt="Email Icon" >
+        <img src="./pics/email.svg" alt="Email Icon" >
         sunyue_cn@foxmail.com
       </a>
     </div>
@@ -41,13 +41,13 @@
 
  <!-- Floating Chatbot Button -->
  <button id="chatButton">
-  <img src="https://yuesuncn.github.io/myprojects/pics/question.svg" alt="Chat" class="chat-icon">
+  <img src="./pics/question.svg" alt="Chat" class="chat-icon">
 </button>
 
 <!-- Chat Window -->
 <div id="chatWindow">
   <button id="closeChat">
-    <img src="https://yuesuncn.github.io/myprojects/pics/closebotton.svg" alt="Close" class="close-icon">
+    <img src="./pics/closebotton.svg" alt="Close" class="close-icon">
   </button>
   <iframe src="https://yvonne-chatbot.vercel.app/"></iframe>
 </div>
@@ -58,8 +58,9 @@
     const closeChat = document.getElementById('closeChat');
 
     chatButton.addEventListener('click', () => {
-      chatWindow.style.display = 'block';
-    });
+	chatWindow.style.display = (chatWindow.style.display === 'block') ? 'none' : 'block';
+	});
+	<!--('click', () => {chatWindow.style.display = 'block';}); -->
 
     closeChat.addEventListener('click', () => {
       chatWindow.style.display = 'none';

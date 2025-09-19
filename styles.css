@@ -115,8 +115,8 @@ h1, h2, h3, h4, h5, h6, p{
 /* 图表容器 */
 .iframe-container {
   position: relative;
-  width: 100%;
-  max-width: 1028px;
+  width: 72vw; /* 占全屏 72% */
+  max-width: none;/* 去掉最大宽度限制 */
   aspect-ratio: 800 / 486;
   background-color: var(--surface-color);
 }
@@ -147,8 +147,8 @@ h1, h2, h3, h4, h5, h6, p{
   position: fixed;
   bottom: 80px;
   right: 20px;
-  width: 360px;
-  height: 500px;
+  width: max(24vw, 360px); /* 占全屏 24%, 保证不低于 360px*/
+  height: max(calc(72vw * (486 / 800) - 60px), 480px); /* 按照报表的高度计算 */
   border: 1px solid #ccc;
   border-radius: 12px;
   overflow: hidden;
